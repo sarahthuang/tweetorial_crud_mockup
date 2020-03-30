@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'create.js') }}"></script>
+</head>
+<style>
+    #header {
+        font-size: 20px;
+        background-color: #E9EBEE;
+        display: flex;
+        justify-content: left;
+        padding-top: 70px;
+        height: 160px;
+    }
+    .zero_padding {
+        padding: 0px;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+    .inputboxstyle {
+        padding: 0px;
+    }
+    .resizable {
+        width: 500px;
+        height: 30px;
+        padding: 0.5em;
+        text-align: left;
+        margin: 0px;
+    }
+</style>
+<body>
+    <div class="container">
+        <!--Create Header-->
+        <div class="row">
+            <div class="col-md-12" id="header">Create a Tweetorial Card!</div>
+        </div>
+        <!--Search Inputs-->
+        <div class="row col-md-12" style="padding-left: 0px; padding-top: 20px;" id="inputrow">
+            <div class="col-md-12 zero_padding" style="padding-bottom: 10px">
+                <div class="col-md-2 zero_padding" style="display: inline-block" id="ClickHere"></div>
+                <div class="col-md-2 zero_padding" style="display: inline-block" id="LinkDiv"></div>
+            </div>
+            
+            <div class="col-md-12 inputboxstyle" id="Title">
+                <input type="text" class="resizable" id="ipt_title" placeholder="Title (e.g. Here's how Bernie can still win :'))">
+            </div>
+            <br /><br />
+            <div class="col-md-12 inputboxstyle" id="Author">
+                <input type="text" class="resizable" id="ipt_author" placeholder="Author">
+            </div>
+            <br /><br />
+            <div class="col-md-12 inputboxstyle" id="Date">
+                <input type="text" class="resizable" id="ipt_date" placeholder="Date (e.g. 1/1/2000)">
+            </div>
+            <br /><br />
+            <div class="col-md-12 inputboxstyle" id="Text">
+                <input type="text" class="resizable" id="ipt_text" placeholder="Text">
+            </div>
+            <br /><br />
+            <!--
+            <div class="col-md-12 inputboxstyle" id="LeadCharCount">
+                <input type="text" id="ipt_leadcharcount" placeholder="LeadCharCount">
+            </div>
+            <br /><br />
+            -->
+            <div class="col-md-12 inputboxstyle" id="LeadTypes">
+                <input type="text" class="resizable" id="ipt_leadtypes" placeholder="Lead Types">
+            </div>
+            <br /><br />
+            <div class="col-md-12 inputboxstyle" id="Image">
+                <input type="text" class="resizable" id="ipt_image" placeholder="Image (please provide a valid image address for your Tweetorial!)">
+            </div>
+            <br /><br />
+            <div class="col-md-12 inputboxstyle" id="Link">
+                <input type="text" class="resizable" id="ipt_link" placeholder="Link (e.g. the link to the Tweetorial)">
+            </div>
+            <br /><br />
+        </div>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" id="addbutton">Add lead!</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

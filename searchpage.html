@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'searchpage.js') }}"></script>
+    <script>
+        var data = {{leads|tojson}}
+    </script>
+    <style>
+        @import url('https://rsms.me/inter/inter.css');
+
+        html {
+            font-family: 'Inter', sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: 'Inter var', sans-serif;
+            }
+        }
+
+        .description {
+            font-size: 40px;
+            font-family: 'Inter var';
+            font-weight: 200;
+        }
+
+        .missionstatement {
+            font-size: 15px;
+            font-family: 'Inter var';
+            font-weight: 300;
+        }
+
+        .tweetorial{
+            font-size: 30px;
+            font-weight: 200;
+        }
+
+        #noun {
+            font-style: italic;
+        }
+
+        .zero_padding {
+            padding: 0px;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+
+        #searchrow {
+            padding-top: 10px;
+        }
+
+        .searchbox {
+            width: 100%;
+            height: 100%;
+        }
+
+        #warning {
+            color: red;
+            font-weight: bold;
+        }
+
+        .searchresult {
+            border-radius: 10%;
+            border-color: 2px light grey;
+        }
+        
+        .deletebutton {
+            width: 50%;
+        }
+
+        .navbartext {
+            font-size: 18px;
+            padding-right: 10px;
+        }
+
+        .floatright {
+            float: right;
+        }
+
+        .cardimage {
+            width: 298px;
+            height: 200px;
+        }
+
+        .highlight {
+            background-color: #fff34d;
+            -moz-border-radius: 5px; /* FF1+ */
+            -webkit-border-radius: 5px; /* Saf3-4 */
+            border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
+            -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
+            -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
+            padding: 1px 4px;
+            margin: 0 -4px;
+        }
+        .highlighter {
+            background: #fff8ad;
+            color: #000;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <!--Navbar Header-->
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <a class="navbar-brand" href="#">Search Tweetorials!</a>
+            <ul class="navbar-nav">
+                <li class="nav-item active navbartext">
+                    <a class="nav-link" href="../">Home</a>
+                </li>
+                <li class="nav-item navbartext">
+                    <a class="nav-link" href="../create">Create</a>
+                </li>
+            </ul>
+            <form class="form-inline" action="#">
+                <input class="form-control mr-sm-2" id="searchbox" type="text" placeholder="Search for tweetorials by text...">
+                <button class="btn btn-primary" id="submitbutton" type="submit">Search</button>
+            </form>
+        </nav>
+
+        <div class="description col-md-12 zero_padding center">Search and browse for Tweetorials!</div>
+        <div class="missionstatement col-md-12 zero_padding center">The mission of this site is to display and create Tweetorials (Twitter threads aimed at explaining an obscure scientific subject)</div>
+        <div class="results col-md-12 zero_padding center" style="font-weight: bold; color: red;"></div>
+        <!--Display Row (tweetorials)-->
+        <div class="row col-md-12 center" style="padding-top: 20px;" id="tweetrow"></div>
+        <div class="row col-md-12" id="warning"></div>
+    </div>
+</body>
+</html>

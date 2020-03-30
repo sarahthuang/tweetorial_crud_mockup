@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'templatepage.js') }}"></script>
+</head>
+<script>
+    var tweet = {{tweet|tojson}}
+</script>
+<style>
+        
+    #header {
+        font-size: 20px;
+        background-color: #E9EBEE;
+        display: flex;
+        justify-content: left;
+        padding-top: 70px;
+        height: 160px;
+    }
+    .zero_padding {
+        padding: 0px;
+    }
+    .inline {
+        display: inline-block;
+    }
+    .center {
+        justify-content: center
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <!--Tweetorial Search Header-->
+        <div class="row">
+            <div class="col-md-12" id="header">About</div>
+        </div>
+        <!--Display Row (tweetorials)-->
+        <div class="row col-md-12" style="padding-top: 20px" id="tweetrow"></div>
+    </div>
+</body>
+</html>
+
+
+
