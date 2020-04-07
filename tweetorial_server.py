@@ -1,3 +1,5 @@
+import datetime
+import json
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
@@ -672,6 +674,13 @@ def getnondeleted():
     index = request.get_json()
     result = leads[index]["LeadTypes"]
     return jsonify(result=result)
+
+def savetweets():
+    ts = datetime.datetime.now().timestamp()
+    o = "./backup/" + repr(ts) + ".txt"
+    out_file = open(o, "w")
+    out_file.write(json.dumps(leads))
+    out_file.close()
     
 if __name__ == '__main__':
    app.run(debug = True)
